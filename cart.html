@@ -7,37 +7,122 @@
 	<title>Document</title>
 	<style>
 		 #cart-container{
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
+            display: flex;
+			flex-direction: column
+            
         }
         img{
-            width: 100%;
+            width: 20%;
+            margin-bottom: 40px;
+           
         }
-		#Card{
-        display: flex;
-		justify-content: space-between;
+		#cart-container >div{
+			width: 70%;
+			display: flex;
+		flex-direction:row;
+		gap: 30px;
+		
+		
 		}
+		
+		#cart-container > div button{
+			margin: 10px;
+			width: 10%;
+			height: 30px;
+			margin-top: 120px;
+      border: 0cm;
+      
+		}
+    #cart-container > div button:hover{
+			margin: 10px;
+			width: 10%;
+			height: 30px;
+			margin-top: 120px;
+      background-color:skyblue;
+      border: 0cm;
+      
+		}
+		h2,h3,h4,p,span{
+			margin-top: 120px;
+     
+    
+    text-align: center;
+      
+		}
+		#total{
+			text-align: center;
+      margin-bottom: 40px;
+     
+		}
+.item{
+  display: flex;
+  flex-direction: row;
+  column-gap: 220px;
+  
+  width: 60%;
+  margin-left: 40px;
+  font-size: 20px;
+  
+}
+.nav{
+       background-color: aliceblue;
+       color: rgb(55, 53, 53);
+       }
+       #main{
+        display: flex;
+       }
+#side{
+margin-left: 20px;
+margin-top: 10%;
+}
+#side select{
+  width:250px;
+  height: 60px;
+}
+
 	</style>
 </head>
 <body>
-	
 
+  <div class="nav">
+    <h1>SKIN STORE <br>PART OF LOOK FANTASTIC GROUP</h1>
+</div>
+<div class="navi">
+    <h1> Your Cart</h1>
+ </div>
+<hr>
+ <div class="item">
+  <h5>Items</h5>
+  <h5>Price</h5>
+  <h5>
+    Quantity</h5>
+ </div>
+ <hr>
+ <div id="main">
+ <div id="cart-container">
+  <!-- Here Append All the cart Products  -->
 
+</div>
+<div class="low">
+<div id="side">
+  <select name="" id="" style="background-color:rgb(217, 252, 244);">
+    <option value="">Gift selection<br></option>
+    <option value="">Mac</option>
+    <option value="">Mini Products </option>
+  </select>
+</div>
 
-
-
-
-<div class="nav">
-    <h1>Cart</h1>
-    <a href="./products.html">Home</a>
-    <a href="./cart.html">Cart</a>
-    <a href=""></a>
-  </div>
+<div id="side">
+  <select name="" id="" style="background-color: rgb(209, 245, 237);">
+    <option value="">Gift selection<br></option>
+    <option value="">Mac</option>
+    <option value="">Mini Products </option>
+  </select>
+</div>
+</div>
+</div>
   <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
-  <div id="cart-container">
-    <!-- Here Append All the cart Products  -->
-	<div class="Card"></div>
-  </div>
+  <a href="./checkout.html" style="margin: 500px;margin-top:50px;text-decoration: none;padding: 20px;padding-left: 80px;padding-right: 80px; color: bisque;background-color: rgb(63, 60, 60);">🔒CheckOut</a>
 </body>
 <script>
   // Write all necessery JS here 
@@ -58,6 +143,7 @@
       let Increase = document.createElement("button");
       let Decrease = document.createElement("button");
       let Quantity = document.createElement("span");
+
       Image.src = product.img;
       Brand.textContent = product.brand;
       Category.textContent = product.category;
@@ -99,7 +185,7 @@
 		  }
       }
   
-       document.getElementById("cart-total").textContent=sum;
+       document.getElementById("cart-total").textContent="$"+sum;
       Card.append(Image, Brand, Price, Detail, Category,Increase,Quantity,Decrease, Remove)
       Container.append(Card);
     });

@@ -7,7 +7,7 @@
   <title>products</title>
   <style>
 	#products img{
-		width:80%;
+		width:100%;
 		display: grid;
 		grid-template-columns: repeat(3,1fr);
 	}
@@ -15,22 +15,76 @@
 		display: grid;
 		grid-template-columns: repeat(3,1fr);
 	}
-	/* #product > div  {
+	#products > div  {
+         
+		  width:70%;
+		  padding: 20px;
+		  margin: 40px;
+		
+		  
+   }
+   #products > div >button{
+	background-color: rgb(62, 61, 61);
+	width: 250px;
+	height: 35px;
+	margin: 10px;
+	margin-left: 20px;
+	border: 0cm;
+	color:white;
+   }
+   #products > div >button:hover{
+	background-color: rgb(59, 170, 185);
+	width: 150px;
+	height: 35px;
+	margin: 10px;
+	border: 0cm;
+	color:rgb(251, 252, 252);
+	text-align: center;
+   }
+   .nav{
+       background-color: aliceblue;
+       width: 100%;
+       }
 
-	} */
+
+
+       @media only screen and (max-width: 800px) {
+        /* Medium Screen  */
+        #products{
+            grid-template-columns: repeat(2,1fr);
+        }
+        #filter{
+            margin-left: 2px;
+        }
+       }
+
+
+       @media only screen and (max-width: 500px) {
+        /* Small Screen  */
+        #products{
+            grid-template-columns: repeat(1,1fr);
+        }
+       }
   </style>
 </head>
 <body>
-  <a href="cart.html">Cart</a>
-  <a href="products.html">Products</a>
-  <a href="wishlist.html">wish</a>
+    <div class="nav">
+        <h1>SKIN STORE <br>PART OF LOOK FANTASTIC GROUP</h1>
+    </div>
+  <h1 style="text-align: center;font-size: 70px;color: rgb(62, 61, 61);">All Products</h1>
 
-  <select id="filter">
+  <select id="filter" style="margin-left: 40%;width:250px;height: 50px; border-radius: 5px;">
 	<option value="">Filter By Brand</option>
 	<option value="Mac">Mac</option>
 	<option value="Loreal Paris">Loreal Paris</option>
 	<option value="Bobbi Brown">Bobbi Brown</option>
   </select>
+  <select id="byprice" style="margin-left: 40%;width:250px;height: 50px; border-radius: 5px;">
+	<option value="">Filter By Price</option>
+	<option value="lth">Low to High</option>
+	<option value="htl">High to Low</option>
+  </select>
+
   <div id="products">
 
   </div>
@@ -174,6 +228,12 @@ function FilterData(data) {
 
 
 
+// function displayData(data) {
+//   // your code to display the filtered data here
+// }
+
+
+
 let Wish=JSON.parse(localStorage.getItem("wish"))||[];
 let Cart= JSON.parse(localStorage.getItem("cart"))||[];
 let Container= document.querySelector("#products");
@@ -192,7 +252,7 @@ function DisplayData(data){
         Image.src= products.img;
         name.textContent= products.name;
 		Brand.textContent=products.brand
-        Price.textContent=`₹${products.price}` 
+        Price.textContent=`$${products.price}` 
         Detail.textContent=products.description 
         AddtoCart.textContent= "Add to Cart" ;
 		

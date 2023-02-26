@@ -8,28 +8,45 @@
     <style>
         #wish-container{
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(3,1fr);
+            gap: 50px;
         }
         img{
             width: 100%;
         }
+        #wish-container > div{
+            padding: 40px;
+            text-align: center;
+        }
+        .nav{
+       background-color: aliceblue;
+       }
+
+
+
+       
+       @media only screen and (max-width: 800px) {
+        /* Medium Screen  */
+        #wish-container{
+            grid-template-columns: repeat(2,1fr);
+        }
+      
+       }
+
+
+       @media only screen and (max-width: 500px) {
+        /* Small Screen  */
+       #wish-container{
+            grid-template-columns: repeat(1,1fr);
+        }
+       }
     </style>
 </head>
 <body>
-    
-
-
-
-
-
-
-<div class="nav">
-    <h1>Wish List</h1>
-    <a href="./products.html">Home</a>
-    <a href="./cart.html">Cart</a>
-    <a href=""></a>
-  </div>
- 
+  <div class="nav">
+    <h1>SKIN STORE <br>PART OF LOOK FANTASTIC GROUP</h1>
+</div>
+    <h1 style="text-align: center;font-size: 70px;color: rgb(73, 71, 71);">Your Wishlist</h1>
   <div id="wish-container">
     <!-- Here Append All the cart Products  -->
   </div>

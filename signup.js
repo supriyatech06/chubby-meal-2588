@@ -12,4 +12,5 @@ signup.addEventListener("click",function(){
     console.log(data);
     localStorage.setItem("updata",JSON.stringify(data));
     alert("Sign up succesful ");
+    window.location.href="./both.html"
 })
