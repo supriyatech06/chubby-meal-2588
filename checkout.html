@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(240, 235, 235);
+        }
+        #main{
+            margin-left: 30%;
+           
+           
+            width:21.5%;
+           background-color: white;
+            padding: 30px;
+            padding-left: 70px;
+            padding-right: 10px;
+            
+        }
+        #main input{
+            width: 200px;
+            height: 50px;
+        }
+        .nav{
+       background-color: aliceblue;
+       }
+        
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h1>SKIN STORE <br>PART OF LOOK FANTASTIC GROUP</h1>
+    </div>
+    <div id="main">
+    <form >
+<h3>Name</h3>
+<input type="name">
+<br>
+
+<h3>Contact Number</h3>
+<input type="number">
+<br>
+<h3>Address</h3>
+<input type="text">
+<br>
+<select name="" id="" style="margin-top: 25px;width: 210px; height: 50px;margin-bottom: 25px;">
+    <option value="">Payment Type</option>
+    <option value="">Cash On Delivery</option>
+    <option value="">Online payment</option>
+</select>
+<br>
+<button id="button" style="width:210px;height: 50px;background-color: skyblue;">Confirm Order</button>
+
+
+    </form>
+</div>
+</body>
+<script>
+    let btn=document.getElementById("button")
+    btn.addEventListener("click",()=>{
+
+    alert("Your order is confirmed ")
+       })
+</script>
+</html>

@@ -12,18 +12,13 @@
             padding-top: 40px;
             padding-left: 40px;
             padding-right: 40px;
-           
             height: 80px;
-            
-
         }
 
         .navi img{
             padding-bottom: 80px;
             height:50px;
-            width: 9%;
-            
-            
+            width: 9%;   
         }
         .navi{
             font-size: 20px;
@@ -75,6 +70,7 @@
         text-align: center;
         color: #000000;
         font-size: 30px;
+        overflow: auto;
       }
       .centered {
         position: absolute;
@@ -176,9 +172,6 @@
       background-color: rgb(93, 91, 91);
       color: aliceblue;
      }
-
-      
-
      .drop{
        position:relative;
        display: inline-block;
@@ -231,29 +224,82 @@
      .dbtn:hover{
       background-color: rgb(227, 224, 224)
      }
-     
+      
+     @media only screen and (max-width: 800px) {
+        /* Medium Screen  */
+       .nouse{
+         display: none;
+       }
+       .del{
+         display: none;
+       }
+       .main1{
+          flex-direction: column;
+       }
+       .main2{
+         flex-direction: column;
+       }
+       .end{
+         flex-direction: column;
+       }
+       .endsub{
+         flex-direction: column;
+       }
+       
+       
+     }
 
+
+
+
+     @media only screen and (max-width: 500px) {
+        /* Small Screen  */
+        .nouse{
+        display: none;
+       }
+       .del{
+         display: none;
+       }
+       .main1{
+          flex-direction: column;
+       }
+       .main2{
+         flex-direction: column;
+       }
+       .end{
+         flex-direction: column;
+       }
+       .endsub{
+         flex-direction: column;
+       }
+       .search{
+         display: none;
+       }
+      
+     }
     </style>
 </head>
 <body>
+   <div class="top" style="background-color: rgb(220, 218, 218);">
+      <a href="https://www.skinstore.com/help-centre.list" style="margin-left: 90%;text-decoration: none;color: black;font-size: 25px;">Help</a>
+   </div>
   
     <div class="navi" >
-    <img src="https://document-export.canva.com/iXib0/DAFbMxiXib0/4/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20230221%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230221T072256Z&X-Amz-Expires=39119&X-Amz-Signature=d1963b9bb75c0b41783a56b38ea82c746026076057c490a1f087bb31392a4a61&X-Amz-SignedHeaders=host&response-expires=Tue%2C%2021%20Feb%202023%2018%3A14%3A55%20GMT" alt="error">
+    <img src="https://document-export.canva.com/iXib0/DAFbMxiXib0/4/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20230226%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230226T072256Z&X-Amz-Expires=24719&X-Amz-Signature=0914eb22fee13673213a1895c80121333c0a8ca7032cff1a7085d120ae5ede88&X-Amz-SignedHeaders=host&response-expires=Sun%2C%2026%20Feb%202023%2014%3A14%3A55%20GMT" alt="error">
     <div class="search">
     <input type="text" placeholder="Search for product" style="height: 30px; width: 200px;">
      <button style="height: 35px;">🔍</button> 
     </div>
     <div class="drop">
-    <button  class="dbtn" >👤Account</button>
-    <div class="dropcont">
-    <a href="both.html" >LOGIN</a>
-    
-    <a href="signup.html">REGISTER</a>
-    <a href="">Your Orders</a>
-   </div>
-   </div>
-    <a href="./products.html">🛒Cart</a>
-    
+      <button  class="dbtn" >👤Account</button>
+      <div class="dropcont">
+      <a href="both.html" >LOGIN</a>
+      
+      <a href="signup.html">REGISTER</a>
+      <a href="./wishlist.html">❤️Wishlist</a>
+     </div>
+     </div>
+      <a href="./cart.html">🛒Cart</a>
     </div>
     <hr style="color:black;background-color: black;height: 2px;">
    <div class="nouse">
@@ -339,10 +385,8 @@
 
    <div class="main3">
 
-   </div>
-   <div class="slide">
-
-   </div>
+ 
+  
    <div class="end">
     <div>
         <hr style="width:480px;">
@@ -380,6 +424,6 @@
     </div>
     </div>
  </div>
-
+</div>
 </body>
 </html>
