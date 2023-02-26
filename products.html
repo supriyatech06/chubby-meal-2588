@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,6 +91,7 @@
   </div>
 </body>
 <script>
+
 
 let products= [
     {
@@ -205,10 +207,6 @@ let products= [
 
    
 ]
-
-
-
-
 let filterby = document.getElementById("filter");
 filterby.addEventListener("change", () => {
   FilterData(products);
@@ -221,6 +219,7 @@ function FilterData(data) {
     let filteredData = data.filter((ele) => {
       return ele.brand == filterby.value;
     });
+
     DisplayData(filteredData);
   }
 }
@@ -266,20 +265,27 @@ function DisplayData(data){
                 localStorage.setItem("wish",JSON.stringify(Wish));
                 window.location.href="./wishlist.html"
             }
+		})
+    
+      
+    
+
+
+        AddtoCart.addEventListener("click", () => {
+          if (checkDuplicate(products)) {
+            alert("Product Already in Cart");
+          } else {
+            Cart.push({ ...products, quantity: 1 });
+            localStorage.setItem("cart", JSON.stringify(Cart));
+            alert("Product Added To Cart");
+          }
+
         });
 
-        AddtoCart.addEventListener("click", ()=>{
-            if(checkDuplicate(products)){
-                alert("Product already in cart");
-            } else{
-                Cart.push({...products, quantity:1});
-                localStorage.setItem("cart",JSON.stringify(Cart));
-                alert("product added to cart")
-            }
-        });
+       
         Card.append(Image,name,Brand,Price,Detail,AddtoCart,wishlist);
         Container.append(Card);
-    });
+	})
     console.log("display",data);
 }
 DisplayData(products)
